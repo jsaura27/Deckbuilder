@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/roadmap.schema.json",
+  "title": "Roadmap",
+  "type": "object",
+  "required": ["title", "version", "phases"],
+  "properties": {
+    "title": {"type": "string"},
+    "version": {"type": "string"},
+    "phases": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "tasks"],
+        "properties": {
+          "name": {"type": "string"},
+          "tasks": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["id", "name", "subtasks", "status"],
+              "properties": {
+                "id": {"type": "string"},
+                "name": {"type": "string"},
+                "subtasks": {"type": "array", "items": {"type": "string"}},
+                "status": {"type": "string", "enum": ["pending", "planned", "in-progress", "done", "error"]},
+                "planFolder": {"type": ["string", "null"]},
+                "startedAt": {"type": ["string", "null"], "format": "date-time"},
+                "completedAt": {"type": ["string", "null"], "format": "date-time"},
+                "error": {"type": ["string", "null"]}
+              },
+              "additionalProperties": false
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

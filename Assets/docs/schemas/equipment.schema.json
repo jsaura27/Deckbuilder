@@ -1,0 +1,21 @@
+{
+ "$schema": "http://json-schema.org/draft-07/schema#",
+ "title": "Equipment",
+ "type": "object",
+ "required": ["id", "name", "slotType"],
+ "properties": {
+ "id": { "type": "string" },
+ "name": { "type": "string" },
+ "slotType": { "type": "string", "enum": ["Weapon", "Armor", "Trinket"] },
+ "rarity": { "type": "string", "enum": ["Common", "Rare", "Epic", "Legendary"] },
+ "statModifiers": {
+ "type": "array",
+ "items": { "type": "object" }
+ },
+ "cardModifiers": {
+ "type": "array",
+ "items": { "type": "object" }
+ },
+ "onEquipEffects": { "type": "array", "items": { "type": "object" } }
+ }
+}

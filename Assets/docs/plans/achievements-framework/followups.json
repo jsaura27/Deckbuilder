@@ -1,0 +1,36 @@
+{
+  "task": "4.4 - Achievements Framework",
+  "generatedAt": "2025-11-04T12:40:00Z",
+  "followups": [
+    {
+      "id": "4.4-persistence",
+      "title": "Integrate Achievement Persistence with SaveManager",
+      "rationale": "Wire the AchievementPersistence stub to the project's SaveManager; support storing unlocked achievements and persistent progress. Implement migrations and add save/load tests.",
+      "estimatedEffort": "M"
+    },
+    {
+      "id": "4.4-samples",
+      "title": "Author Sample Achievement Assets",
+      "rationale": "Use the importer tool to create the 5 sample achievements (tutorial, first win, deck collector, combo master, long run) and commit them as designer-facing assets.",
+      "estimatedEffort": "S"
+    },
+    {
+      "id": "4.4-evaluator",
+      "title": "Expand AchievementEvaluator and Add Coverage",
+      "rationale": "Subscribe to the game's event bus, implement composite criteria evaluation, and add deterministic unit and integration tests for evaluation logic.",
+      "estimatedEffort": "M"
+    },
+    {
+      "id": "4.4-editor",
+      "title": "Editor Importer & Validation Window",
+      "rationale": "Enhance the importer to import JSON batch files, validate them against `Assets/docs/schemas/achievement.schema.json`, and provide preview and error reporting.",
+      "estimatedEffort": "M"
+    },
+    {
+      "id": "4.4-ci",
+      "title": "CI Hooks for Achievements",
+      "rationale": "Add CI steps to validate achievement JSON against schema and run Editor tests for smoke-checks in CI.",
+      "estimatedEffort": "S"
+    }
+  ]
+}

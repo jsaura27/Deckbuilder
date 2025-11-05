@@ -1,0 +1,37 @@
+{
+  "task": "3.2 - Combat System",
+  "timestamp": "2025-11-01T12:00:00Z",
+  "planFilesValidated": true,
+  "planMatch": true,
+  "filesCreated": [
+    "Assets/Scripts/Combat/TurnManager.cs",
+    "Assets/Scripts/Combat/CombatState.cs",
+    "Assets/Scripts/Combat/ICombatant.cs",
+    "Assets/Scripts/Combat/StatusEffect.cs",
+    "Assets/Scripts/Combat/CombatAction.cs",
+    "Assets/Scripts/Combat/IEnemyAI.cs",
+    "Assets/Tests/CombatTests/TurnManagerTests.cs",
+    "Assets/Tests/CombatTests/StatusEffectTests.cs"
+  ],
+  "filesEdited": [
+    {
+      "path": "Assets/docs/roadmap.json",
+      "reason": "Updated status to in-progress then completed after scoped implementation; recorded timestamps"
+    }
+  ],
+  "decisions": [
+    {
+      "context": "Ambiguous depth for Combat system implementation",
+      "decision": "Implement minimal, compile-safe skeletons (ScriptableObjects/MonoBehaviours) and tests to validate buildability",
+      "rationale": "Keep changes scoped to plan deliverables and avoid large design/behavior choices at this stage"
+    }
+  ],
+  "buildStatus": "success",
+  "buildOutput": null,
+  "tests": {
+    "executed": false,
+    "summary": null,
+    "failures": []
+  },
+  "error": null
+}

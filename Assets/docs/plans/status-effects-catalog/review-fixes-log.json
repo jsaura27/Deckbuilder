@@ -1,0 +1,40 @@
+{
+  "task": "3.7",
+  "timestamp": "2025-11-02T12:45:00Z",
+  "passes": [
+    {
+      "index": 1,
+      "discrepanciesFound": [
+        "MISSING_FILE: Assets/Tests/Editor/DataModels/StatusEffectsTests.cs",
+        "SUMMARY_GAP: summary.md lacked 'How to run tests' instructions",
+        "BUILD_ERROR: original environment could not run 'dotnet' to verify build"
+      ],
+      "actions": [
+        { "type": "edit", "path": "Assets/docs/plans/status-effects-catalog/summary.md", "reason": "Add test execution instructions to satisfy summary requirements" },
+        { "type": "edit", "path": "Assets/docs/plans/status-effects-catalog/changes-log.json", "reason": "Record created test file in filesCreated" }
+      ],
+      "buildStatus": "not-executed",
+      "testSummary": "Tests created but not executed in this environment"
+    },
+    {
+      "index": 2,
+      "discrepanciesFound": [
+        "MISSING_FILE: Assets/Tests/StatusEffectsTests.cs"
+      ],
+      "actions": [
+        { "type": "create", "path": "Assets/Tests/StatusEffectsTests.cs", "reason": "Create top-level Editor test to satisfy plan deliverable" },
+        { "type": "edit", "path": "Assets/docs/plans/status-effects-catalog/changes-log.json", "reason": "Add created test to filesCreated list" }
+      ],
+      "buildStatus": "not-executed",
+      "testSummary": "Created test file; execution deferred"
+    }
+  ],
+  "finalStatus": "partial",
+  "remainingDiscrepancies": [
+    "TESTS_NOT_EXECUTED: Unity Test Runner inaccessible in this environment",
+    "BUILD_NOT_VALIDATED: no runtime build executed to validate compilation in Unity"
+  ],
+  "notes": "Added missing Editor and EditMode test file and How-to section in summary.md. Recommend running tests locally or in CI and updating changes-log.json.tests with results. If tests fail, re-run this review prompt to attempt fixes.",
+  "newFiles": ["Assets/Tests/StatusEffectsTests.cs"],
+  "editedFiles": ["Assets/docs/plans/status-effects-catalog/changes-log.json","Assets/docs/plans/status-effects-catalog/summary.md"]
+}

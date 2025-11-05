@@ -1,0 +1,16 @@
+{
+  "task": "JSON Import & Validation Tool",
+  "objective": "Create an Editor utility that imports JSON content, validates against schemas, and converts to ScriptableObjects.",
+  "prerequisites": ["Assets/docs/schemas/", "Assets/docs/requirements.md", "Destination ScriptableObject folders (configurable)"] ,
+  "steps": [
+    {"step": 1, "title": "Folder selection", "description": "User selects a folder containing JSON content in the Editor."},
+    {"step": 2, "title": "Schema resolution", "description": "Resolve which schema applies to each JSON file (manifest or naming convention)."},
+    {"step": 3, "title": "Validate JSON", "description": "Validate JSON content using a JSON Schema validator and collect errors."},
+    {"step": 4, "title": "Report errors", "description": "Display errors in an Editor window and write a validation report file."},
+    {"step": 5, "title": "Convert to ScriptableObjects", "description": "Map validated JSON to ScriptableObject instances and write assets to disk."},
+    {"step": 6, "title": "Options & Idempotency", "description": "Support dry-run, overwrite, skip duplicates, and consistent naming."},
+    {"step": 7, "title": "Testing & CI", "description": "Provide unit tests for conversion and add CI step for schema validation in future."}
+  ],
+  "deliverables": ["plan.md","plan.json","Assets/Editor/Tools/JsonImportValidator.cs","validation-report.md"],
+  "notes": ["Use relative paths like Assets/docs/schemas/","Prefer Newtonsoft.Json for parsing","Be mindful of licensing for Newtonsoft.Json.Schema"]
+}

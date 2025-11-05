@@ -1,0 +1,30 @@
+{
+  "task": "Save System & Migration",
+  "objective": "Design and implement a versioned save system for meta-progression with migration support and optional in-run snapshots.",
+  "prerequisites": [
+    "Assets/docs/requirements.md",
+    "Assets/docs/requirements.json",
+    "Assets/docs/schemas/meta-progression.schema.json"
+  ],
+  "steps": [
+    { "step": 1, "title": "Define save schemas", "description": "Create schemas/save.schema.json referencing meta-progression and snapshot schemas." },
+    { "step": 2, "title": "Implement SaveData model", "description": "Add serializable C# models under Assets/Scripts/Save matching schema." },
+    { "step": 3, "title": "Migration registry", "description": "Implement ISaveMigration, migrations, and runner that applies migrations on load." },
+    { "step": 4, "title": "Persistence layer", "description": "Implement SaveManager with atomic file write, backup, validate, load and save methods." },
+    { "step": 5, "title": "Tests", "description": "Unit tests for serialization and migration; integration test for full save/load/migrate flow." },
+    { "step": 6, "title": "Docs & examples", "description": "Add README notes and examples for manual migration and restore." }
+  ],
+  "deliverables": [
+    "Assets/docs/plans/save-system-migration/plan.md",
+    "Assets/docs/plans/save-system-migration/plan.json",
+    "Assets/docs/schemas/save.schema.json",
+    "Assets/Scripts/Save/SaveData.cs",
+    "Assets/Scripts/Save/SaveManager.cs",
+    "Assets/Tests/Save/"
+  ],
+  "notes": [
+    "Prefer atomic file operations and idempotent migrations.",
+    "Use Unity-friendly serialization. Consider Newtonsoft.Json if complex conversion is required.",
+    "Record RNG seeds and contentVersion in saves for reproducibility."
+  ]
+}

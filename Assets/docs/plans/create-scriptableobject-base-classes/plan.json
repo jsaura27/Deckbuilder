@@ -1,0 +1,39 @@
+{
+  "task": "Create ScriptableObject Base Classes",
+  "objective": "Establish foundational ScriptableObject definitions for core gameplay data enabling data-driven content and tooling.",
+  "prerequisites": [
+    "Phase1 tasks completed (data models & schemas)",
+    "Generated POCO classes in Assets/Scripts/DataModels/",
+    "Schemas: Assets/docs/schemas/cards.schema.json, blessings.schema.json, equipment.schema.json, skilltree.schema.json",
+    "Requirements: Assets/docs/requirements.md"
+  ],
+  "steps": [
+    { "step": 1, "title": "Folder Structure", "description": "Create Assets/Scripts/ScriptableObjects/Base and Definitions folders." },
+    { "step": 2, "title": "Enumerations & Shared Types", "description": "Add enums CardType, Rarity, EquipmentSlotType in Enums.cs." },
+    { "step": 3, "title": "Base Class Principles", "description": "Abstract bases, immutable Id, validation method stub." },
+    { "step": 4, "title": "CardDefinition", "description": "Implement fields per schema with CreateAssetMenu attribute." },
+    { "step": 5, "title": "BlessingDefinition", "description": "Implement blessing fields including evolution stages." },
+    { "step": 6, "title": "EquipmentDefinition", "description": "Implement equipment fields with stat & card modifiers." },
+    { "step": 7, "title": "SkillTreeDefinition", "description": "Implement skill tree branches and nodes mapping schema." },
+    { "step": 8, "title": "Validation Hooks", "description": "Add OnValidate to report basic data issues." },
+    { "step": 9, "title": "ID Strategy Comment", "description": "Document manual id approach and future GUID possibility." },
+    { "step": 10, "title": "Namespace & Style", "description": "Apply Game.Data namespace, serialize private fields with getters." },
+    { "step": 11, "title": "Extensibility Notes", "description": "Reference future JSON import and validation service." },
+    { "step": 12, "title": "Deliverables Placement", "description": "Ensure all scripts added under ScriptableObjects folder." }
+  ],
+  "deliverables": [
+    "Enums.cs",
+    "CardDefinition.cs",
+    "BlessingDefinition.cs",
+    "EquipmentDefinition.cs",
+    "SkillTreeDefinition.cs",
+    "Supporting serializable structs",
+    "Validation stubs"
+  ],
+  "notes": [
+    "Data holders only, no gameplay logic",
+    "Composition over inheritance for effects",
+    "Effect serialization strategy deferred",
+    "Potential Addressables integration later"
+  ]
+}

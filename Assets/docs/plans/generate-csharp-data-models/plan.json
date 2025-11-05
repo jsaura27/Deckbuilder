@@ -1,0 +1,27 @@
+{
+  "task": "Generate C# Data Models",
+  "objective": "Auto-generate C# POCO classes from JSON schemas and place them under Assets/Scripts/DataModels/ with Unity-friendly annotations.",
+  "prerequisites": [
+    "Assets/docs/schemas/ (validated)",
+    "Assets/Scripts/DataModels/ (destination)",
+    "Define JSON-to-C# type mappings"
+  ],
+  "steps": [
+    { "step": 1, "title": "Inventory schemas", "description": "Select schemas to generate models from (cards, blessings, equipment, skilltree)." },
+    { "step": 2, "title": "Define type mappings", "description": "Map JSON Schema types and enums to C# types and enums." },
+    { "step": 3, "title": "Generate classes", "description": "Create .cs files with [Serializable] attribute and appropriate properties." },
+    { "step": 4, "title": "Unity adjustments", "description": "Ensure Unity-serializable types, add comments and namespace." },
+    { "step": 5, "title": "Place files", "description": "Write generated files to Assets/Scripts/DataModels/ and create Enums folder if needed." },
+    { "step": 6, "title": "Optional editor utility", "description": "Provide a Unity Editor menu item to re-run generation." }
+  ],
+  "deliverables": [
+    "Assets/Scripts/DataModels/*.cs",
+    "Assets/docs/plans/generate-csharp-data-models/plan.md",
+    "Assets/docs/plans/generate-csharp-data-models/plan.json",
+    "Optional: Assets/Editor/GenerateDataModelsEditor.cs"
+  ],
+  "notes": [
+    "Generate partial classes (*.generated.cs) to allow manual edits in separate files.",
+    "Use PascalCase for class and enum names.",
+    "Idempotent generation: overwrite only generated files."]
+}

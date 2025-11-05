@@ -1,0 +1,31 @@
+{
+  "task": "Card System",
+  "objective": "Implement deck construction, draw/discard mechanics, and an effect resolution pipeline integrated with combat.",
+  "prerequisites": [
+    "Assets/docs/requirements.md",
+    "Assets/docs/requirements.json",
+    "Assets/docs/schemas/",
+    "Assets/Scripts/DataModels/",
+    "Assets/Scripts/ScriptableObjects/"
+  ],
+  "steps": [
+    { "step": 1, "title": "Design data model mapping", "description": "Review card schema and ensure C# data models match schema properties." },
+    { "step": 2, "title": "Implement core deck & hand types", "description": "Create Deck, Hand, DrawPile, DiscardPile classes and ICard/ICardEffect interfaces." },
+    { "step": 3, "title": "Build draw/discard mechanics", "description": "Implement Draw, Discard, Shuffle with events and pooling." },
+    { "step": 4, "title": "Create effect resolution pipeline", "description": "Design and implement ResolveTargeting, ApplyCosts, ApplyEffects, PostResolve phases." },
+    { "step": 5, "title": "Integrate with Combat System", "description": "Define contracts and adapters between card effects and combat actions." },
+    { "step": 6, "title": "Editor tools & import", "description": "Add JSON import and conversion tool for ScriptableObjects." },
+    { "step": 7, "title": "Tests & validation", "description": "Add unit tests for core mechanics and effect resolution." }
+  ],
+  "deliverables": [
+    "Assets/Scripts/CardSystem/Deck.cs",
+    "Assets/Scripts/CardSystem/Hand.cs",
+    "Assets/Scripts/CardSystem/EffectPipeline.cs",
+    "Assets/Tests/CardSystemTests/"
+  ],
+  "notes": [
+    "Minimize allocations; use pooling",
+    "Use events for decoupling",
+    "Follow Unity serialization patterns"
+  ]
+}

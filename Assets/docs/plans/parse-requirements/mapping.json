@@ -1,0 +1,39 @@
+{
+ "systems": [
+ {
+ "name": "Cards",
+ "scriptableObject": "Assets/Scripts/Definitions/CardDefinition.cs",
+ "runtimeManager": "Assets/Scripts/Systems/CardSystem.cs",
+ "schema": "Assets/docs/schemas/cards.schema.json",
+ "notes": "CardDefinition will map effects array to serializable EffectData objects."
+ },
+ {
+ "name": "Blessings",
+ "scriptableObject": "Assets/Scripts/Definitions/BlessingDefinition.cs",
+ "runtimeManager": "Assets/Scripts/Systems/BlessingManager.cs",
+ "schema": "Assets/docs/schemas/blessings.schema.json",
+ "notes": "Evolution stages map to BlessingEvolution objects; triggers are string-based conditions parsed by run-state evaluator."
+ },
+ {
+ "name": "Equipment",
+ "scriptableObject": "Assets/Scripts/Definitions/EquipmentDefinition.cs",
+ "runtimeManager": "Assets/Scripts/Systems/EquipmentManager.cs",
+ "schema": "Assets/docs/schemas/equipment.schema.json",
+ "notes": "StatModifiers and cardModifiers map to structured modifier types."
+ },
+ {
+ "name": "SkillTree",
+ "scriptableObject": "Assets/Scripts/Definitions/SkillTreeDefinition.cs",
+ "runtimeManager": "Assets/Scripts/Systems/SkillTreeService.cs",
+ "schema": "Assets/docs/schemas/skilltree.schema.json",
+ "notes": "Nodes include conditionalUnlock string interpreted by skill service. Branch selection enforced by UI."
+ },
+ {
+ "name": "Combat",
+ "scriptableObject": "N/A",
+ "runtimeManager": "Assets/Scripts/Systems/CombatManager.cs",
+ "schema": "N/A",
+ "notes": "Combat uses CardDefinition and StatusEffect runtime types; StatusEffect schema to be defined later."
+ }
+ ]
+}

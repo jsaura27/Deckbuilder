@@ -1,0 +1,29 @@
+{
+  "task": "3.6",
+  "missingDeliverables": [],
+  "unfulfilledSteps": [],
+  "testGaps": [
+    "Integration tests for GameObjectPool behavior under Unity (playmode tests) are recommended to increase confidence in pooling behavior when interacting with scene lifecycle."
+  ],
+  "suggestedTasks": [
+    {
+      "id": "3.6-1",
+      "title": "Integrate Pooling into High-Churn Hotspots",
+      "rationale": "Replace Instantiate/Destroy sites (projectiles, VFX, UI nodes) incrementally and measure allocation improvements.",
+      "estimatedEffort": "M"
+    },
+    {
+      "id": "3.6-2",
+      "title": "Benchmark Harness & Baseline Captures",
+      "rationale": "Automate representative scenario runs and store profiler snapshots in the plan's benchmarks folder for before/after comparison.",
+      "estimatedEffort": "S"
+    },
+    {
+      "id": "3.6-3",
+      "title": "Expand Pooling Tests (Playmode)",
+      "rationale": "Add playmode tests validating GameObjectPool lifecycle and release behavior in scene contexts.",
+      "estimatedEffort": "M"
+    }
+  ],
+  "buildFixHints": []
+}

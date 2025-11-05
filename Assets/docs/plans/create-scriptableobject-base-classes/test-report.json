@@ -1,0 +1,21 @@
+{
+  "task": "2.1",
+  "coverage": 0.65,
+  "files": [
+    { "path": "Assets/Scripts/ScriptableObjects/Definitions/CardDefinition.cs", "coverage": 0.7 },
+    { "path": "Assets/Scripts/ScriptableObjects/Definitions/BlessingDefinition.cs", "coverage": 0.6 },
+    { "path": "Assets/Scripts/ScriptableObjects/Definitions/EquipmentDefinition.cs", "coverage": 0.6 },
+    { "path": "Assets/Scripts/ScriptableObjects/Definitions/SkillTreeDefinition.cs", "coverage": 0.7 }
+  ],
+  "generatedTests": [
+    "Assets/Tests/ScriptableObjects/CardDefinitionTests.cs",
+    "Assets/Tests/ScriptableObjects/BlessingDefinitionTests.cs",
+    "Assets/Tests/ScriptableObjects/EquipmentDefinitionTests.cs",
+    "Assets/Tests/ScriptableObjects/SkillTreeDefinitionTests.cs"
+  ],
+  "integrationTests": [],
+  "iterations": 1,
+  "status": "partial",
+  "notes": "Coverage is estimated heuristically. Run Unity Coverage to gather exact metrics.",
+  "timestamp": "2025-11-01T12:40:00Z"
+}

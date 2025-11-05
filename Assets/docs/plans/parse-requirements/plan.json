@@ -1,0 +1,57 @@
+{
+ "task": "Parse Requirements",
+ "objective": "Extract gameplay systems, entities, and relationships from requirements and map them to Unity module candidates.",
+ "prerequisites": [
+ "Assets/docs/requirements.md",
+ "Assets/docs/requirements.json",
+ "Assets/docs/schemas/*.schema.json",
+ "Unity project open (optional)"
+ ],
+ "steps": [
+ {
+ "step":1,
+ "title": "Review requirements files",
+ "description": "Open requirements.md and requirements.json. Identify top-level systems: Character, Equipment, Blessings, Cards, Combat, Progression, Save/Performance/Testing constraints."
+ },
+ {
+ "step":2,
+ "title": "Extract entities and relationships",
+ "description": "List entity types and key properties (Card, Blessing, Equipment, SkillNode, SkillBranch, Class, Enemy). Create a table mapping entity -> fields -> relationships."
+ },
+ {
+ "step":3,
+ "title": "Map systems to Unity modules",
+ "description": "Map Data definitions to ScriptableObjects and runtime managers to MonoBehaviours/Services. Record mapping with rationale."
+ },
+ {
+ "step":4,
+ "title": "Cross-check with JSON schemas",
+ "description": "Open schema files and compare properties to extracted fields. Note mismatches and propose amendments."
+ },
+ {
+ "step":5,
+ "title": "Produce a mapping artifact",
+ "description": "Create mapping.json with system, ScriptableObject name/path, manager names, and referenced schemas."
+ },
+ {
+ "step":6,
+ "title": "Determine generation strategy for C# models",
+ "description": "Decide between auto-generation and manual class creation; document chosen approach."
+ },
+ {
+ "step":7,
+ "title": "Validation and sign-off",
+ "description": "Verify completeness and presence of mapping.json; mark task complete."
+ }
+ ],
+ "deliverables": [
+ "Assets/docs/plans/parse-requirements/plan.md",
+ "Assets/docs/plans/parse-requirements/plan.json",
+ "Assets/docs/plans/parse-requirements/mapping.json"
+ ],
+ "notes": [
+ "Prefer conservative ScriptableObject shapes and extend with composition.",
+ "Annotate schema gaps with TODOs for later revision.",
+ "Use id fields for stable cross-references."
+ ]
+}

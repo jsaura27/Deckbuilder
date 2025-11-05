@@ -1,0 +1,31 @@
+{
+  "task": "Equipment System",
+  "objective": "Design and implement the Equipment System including data models, ScriptableObjects, runtime equip manager, and integration with combat and card systems.",
+  "prerequisites": [
+    "Assets/docs/requirements.md",
+    "Assets/docs/requirements.json",
+    "Assets/docs/schemas/equipment.schema.json",
+    "Existing ScriptableObject base classes from Phase2"
+  ],
+  "steps": [
+    { "step": 1, "title": "Define data model", "description": "Review and extend equipment.schema.json. Choose stable id format and shape for statModifiers and cardModifiers." },
+    { "step": 2, "title": "Create C# data models", "description": "Add POCO classes under Assets/Scripts/DataModels/Equipment/ with [Serializable] and enums for Rarity and SlotType." },
+    { "step": 3, "title": "Implement ScriptableObject representations", "description": "Create EquipmentDefinition ScriptableObject and author CreateAssetMenu for editor usability." },
+    { "step": 4, "title": "Implement EquipmentManager service", "description": "Provide equip/unequip, slot validation, stat aggregation and IEquipmentService interface." },
+    { "step": 5, "title": "Integrate card modifiers", "description": "Define cardModifier contract and apply modifiers during card effect resolution." },
+    { "step": 6, "title": "Acquisition and persistence", "description": "Hook into loot and merchant systems; ensure meta persistence and optional run snapshot representation." },
+    { "step": 7, "title": "Tests and validation", "description": "Unit tests for aggregation and enforcement; schema compliance tests for equipment JSON assets." }
+  ],
+  "deliverables": [
+    "Assets/Scripts/DataModels/Equipment/",
+    "Assets/Scripts/ScriptableObjects/Equipment/",
+    "Assets/Scripts/Services/EquipmentManager.cs",
+    "Assets/Tests/EquipmentTests/",
+    "Assets/docs/plans/equipment-system/plan.md"
+  ],
+  "notes": [
+    "Use enums to mirror schema enums.",
+    "Prefer ScriptableObjects for editing; reuse JSON import tool to create these assets.",
+    "Keep cardModifiers small typed objects to simplify application during effect resolution."
+  ]
+}

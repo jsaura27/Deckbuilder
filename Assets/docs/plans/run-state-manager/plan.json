@@ -1,0 +1,28 @@
+{
+  "task": "Run State Manager",
+  "objective": "Design and implement a Run State Manager to track run lifecycle, serialization, and reset behaviors.",
+  "prerequisites": [
+    "Assets/docs/requirements.md",
+    "Assets/docs/requirements.json",
+    "Assets/docs/schemas/"
+  ],
+  "steps": [
+    { "step": 1, "title": "Design RunState data model", "description": "Create serializable RunState POCO matching runtime needs (runId, seed, timestamps, player progress, deck state, acquired items, skill selection, metadata)." },
+    { "step": 2, "title": "Implement RunStateManager service", "description": "Create RunStateManager with CreateNewRun, LoadRun, SaveRun, EndRun, ResetRun and events OnRunStarted/OnRunEnded/OnRunReset." },
+    { "step": 3, "title": "Serialization & persistence", "description": "Implement JSON serialization with versioning and migration hooks; save meta-progression separately under Application.persistentDataPath." },
+    { "step": 4, "title": "Editor tooling (optional)", "description": "Add EditorWindow to inspect and load saved RunState snapshots for debugging." },
+    { "step": 5, "title": "Tests", "description": "Unit and integration tests for run creation, deterministic seed behavior, save/load roundtrip, and reset semantics." }
+  ],
+  "deliverables": [
+    "Assets/docs/plans/run-state-manager/plan.md",
+    "Assets/docs/plans/run-state-manager/plan.json",
+    "Assets/Scripts/Runtime/RunState/RunState.cs",
+    "Assets/Scripts/Runtime/RunState/RunStateManager.cs",
+    "Assets/Tests/RunState/"
+  ],
+  "notes": [
+    "Include a version tag in serialized RunState",
+    "Keep RunState compact; store heavy telemetry separately",
+    "Use Unity-friendly serialization; fallback to Newtonsoft if complex types are needed"
+  ]
+}

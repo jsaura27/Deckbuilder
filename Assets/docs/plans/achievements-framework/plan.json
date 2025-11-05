@@ -1,0 +1,34 @@
+{
+  "task": "Achievements Framework",
+  "id": "4.4",
+  "objective": "Design and deliver an Achievements Framework that supports schema-driven achievements, runtime evaluation, persistence, and tooling for designers.",
+  "prerequisites": [
+    "Assets/docs/requirements.md",
+    "Assets/docs/schemas/",
+    "Assets/docs/plans/save-system-migration",
+    "Unity Editor"
+  ],
+  "steps": [
+    { "step": 1, "title": "Discovery & Schema", "description": "Define achievement.schema.json and map reward types to systems." },
+    { "step": 2, "title": "Data Representation", "description": "Create serializable C# model and ScriptableObject authoring type for achievements." },
+    { "step": 3, "title": "Evaluation Dispatcher", "description": "Implement AchievementEvaluator to subscribe to events and evaluate criteria." },
+    { "step": 4, "title": "Persistence & Integration", "description": "Store unlocked achievements and progress in the save system; provide migrations." },
+    { "step": 5, "title": "Editor Tools", "description": "Editor import/validation window and preview tooling for designers." },
+    { "step": 6, "title": "Sample Content", "description": "Ship 5 sample achievement ScriptableObjects under Assets/Content/Achievements/." },
+    { "step": 7, "title": "QA & Docs", "description": "Run unit tests and a quick playtest; document usage and links." }
+  ],
+  "deliverables": [
+    "Assets/docs/plans/achievements-framework/plan.md",
+    "Assets/docs/plans/achievements-framework/plan.json",
+    "Assets/docs/schemas/achievement.schema.json",
+    "Assets/Scripts/DataModels/AchievementModel.cs",
+    "Assets/Scripts/ScriptableObjects/AchievementDefinition.cs",
+    "Assets/Scripts/Systems/AchievementEvaluator.cs",
+    "Assets/Content/Achievements/"
+  ],
+  "notes": [
+    "Use [Serializable] for data models and ScriptableObject for designer assets.",
+    "Reference Assets/docs/requirements.md for fine-grained criteria and progression rules.",
+    "Keep evaluator logic separate from Unity-specific event subscriptions for testability."
+  ]
+}

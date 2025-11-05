@@ -1,0 +1,115 @@
+{
+	"title": "Project Roadmap - Rogue-lite Deckbuilder",
+	"version": "1.1",
+	"phases": [
+		{
+			"name": "Phase1: Requirements Parsing & Schema Integration",
+			"tasks": [
+				{
+					"id": "1.1",
+					"name": "Parse Requirements",
+					"subtasks": [
+						"Read Assets/docs/requirements.md and requirements.json",
+						"Extract gameplay systems, entities, and relationships",
+						"Map systems to Unity modules (e.g., Cards -> ScriptableObject)"
+					],
+					"status": "done",
+					"planFolder": "Assets/docs/plans/parse-requirements",
+					"startedAt": "2025-10-27T00:00:00Z",
+					"completedAt": "2025-10-27T00:15:00Z",
+					"error": null
+				},
+				{
+					"id": "1.2",
+					"name": "Load & Validate Schemas",
+					"subtasks": [
+						"Load schemas from Assets/docs/schemas/",
+						"Validate any sample JSON data",
+						"Produce validation report"
+					],
+					"status": "done",
+					"planFolder": "Assets/docs/plans/load-validate-schemas",
+					"startedAt": "2025-10-31T00:00:00Z",
+					"completedAt": "2025-10-31T00:00:00Z",
+
+					"error": null
+				},
+				{
+					"id": "1.3",
+					"name": "Generate C# Data Models",
+					"subtasks": [
+						"Auto-generate POCO classes from schemas",
+						"Add [Serializable] and Unity-friendly types",
+						"Place classes under Assets/Scripts/DataModels/"
+					],
+						"planFolder": "Assets/docs/plans/generate-csharp-data-models",
+						"startedAt": "2025-10-31T00:00:00Z",
+						"completedAt": "2025-10-31T00:00:00Z",
+						"status": "done",
+						"error": null
+				}
+			]
+		},
+		{
+			"name": "Phase2: ScriptableObject Scaffolding",
+			"tasks": [
+				{ "id": "2.1", "name": "Create ScriptableObject Base Classes", "subtasks": ["CardDefinition", "BlessingDefinition", "EquipmentDefinition", "SkillTreeDefinition"], "status": "done", "planFolder": "Assets/docs/plans/create-scriptableobject-base-classes", "startedAt": "2025-11-01T00:00:00Z", "completedAt": "2025-11-01T00:00:00Z", "error": null },
+				{ "id": "2.2", "name": "Add Schema-Driven Fields", "subtasks": ["Match fields to schema properties", "Use enums for Rarity/CardType/SlotType", "Add CreateAssetMenu attributes"], "status": "done", "planFolder": "Assets/docs/plans/add-schema-driven-fields", "startedAt": "2025-11-01T00:00:00Z", "completedAt": "2025-11-01T00:00:00Z", "error": null },
+				{ "id": "2.3", "name": "JSON Import & Validation Tool", "subtasks": ["Editor tool to load JSON", "Validate against schema", "Convert to ScriptableObjects"], "status": "done", "planFolder": "Assets/docs/plans/json-import-validation-tool", "startedAt": "2025-11-01T12:00:00Z", "completedAt": "2025-11-01T12:05:00Z", "error": null }
+			]
+		},
+		{
+			"name": "Phase3: Core Systems Implementation",
+			"tasks": [
+				{ "id": "3.1", "name": "Card System", "subtasks": ["Deck builder", "Draw/discard logic", "Effect resolution pipeline"], "status": "done", "planFolder": "Assets/docs/plans/card-system", "startedAt": "2025-11-01T12:00:00Z", "completedAt": "2025-11-01T12:01:00Z", "error": null },
+				{ "id": "3.2", "name": "Combat System", "subtasks": ["Turn-based loop", "Enemy AI state machine", "Status effect manager"], "status": "done", "planFolder": "Assets/docs/plans/combat-system", "startedAt": "2025-11-01T12:00:00Z", "completedAt": "2025-11-01T12:05:00Z", "error": null },
+				{ "id": "3.3", "name": "Equipment System", "subtasks": ["Equip slots", "Passive stat modifiers", "Integration with combat and cards"], "status": "done", "planFolder": "Assets/docs/plans/equipment-system", "startedAt": "2025-11-01T00:00:00Z", "completedAt": "2025-11-01T00:00:00Z", "error": null },
+				{ "id": "3.4", "name": "Blessing System", "subtasks": ["Acquisition logic", "Evolution condition tracking", "Effect manager"], "status": "done", "planFolder": "Assets/docs/plans/blessing-system", "startedAt": "2025-11-01T12:00:00Z", "completedAt": null, "error": "Review performed; evolution logic + tests added. Pending Unity build & test execution for completion." },
+				{ "id": "3.5", "name": "Skill Tree System", "subtasks": ["Branch selection UI", "Node unlocks and conditions", "Class evolution triggers"], "status": "done", "planFolder": "Assets/docs/plans/skill-tree-system", "startedAt": "2025-11-02T00:00:00Z", "completedAt": "2025-11-02T00:00:00Z", "error": null }
+				,
+				{ "id": "3.6", "name": "Performance Baseline & Pooling", "subtasks": ["Identify allocations", "Implement pools", "Baseline metrics doc", "Benchmark harness"], "status": "done", "planFolder": "Assets/docs/plans/performance-baseline-pooling", "startedAt": "2025-11-02T00:00:00Z", "completedAt": "2025-11-02T12:00:00Z", "error": null, "originGap": "GAP-003", "createdDate": "2025-11-01T00:00:00Z", "tags": ["performance","profiling"] },
+				{ "id": "3.7", "name": "Status Effects Catalog", "subtasks": ["Enumerate effects", "Data representation", "Unit tests", "Combat integration"], "status": "done", "planFolder": "Assets/docs/plans/status-effects-catalog", "startedAt": "2025-11-02T12:00:00Z", "completedAt": "2025-11-02T12:10:00Z", "error": "Partial implementation: created data model and editor test. Build/test execution could not be performed in this environment (dotnet not available; Unity Test Runner inaccessible). Integration steps deferred.", "originGap": "GAP-006", "createdDate": "2025-11-01T00:00:00Z", "tags": ["combat","data"] }
+				,{ "id": "3.8", "name": "Encounter System", "subtasks": ["Define encounter types", "Integrate enemy groups", "Pre-combat modifiers"], "status": "pending", "planFolder": null, "createdDate": "2025-11-04T00:00:00Z", "tags": ["feature-request","combat","content"], "slug": "encounter-system" }
+				,{ "id": "3.9", "name": "Reward System", "subtasks": ["Post-combat reward table", "Rarity weighting", "Dynamic scaling"], "status": "pending", "planFolder": null, "createdDate": "2025-11-04T00:00:00Z", "tags": ["feature-request","progression"], "slug": "reward-system" }
+				,{ "id": "3.10", "name": "Character & Enemy System Consolidation", "subtasks": ["Unify character stat model", "Enemy data schema integration", "AI hooks"], "status": "pending", "planFolder": null, "createdDate": "2025-11-04T00:00:00Z", "tags": ["feature-request","combat","character"], "slug": "character-enemy-system" }
+			]
+		},
+		{
+			"name": "Phase4: Run Management & Progression",
+			"tasks": [
+				{ "id": "4.1", "name": "Run State Manager", "subtasks": ["Track run state", "Reset on new run"], "status": "done", "planFolder": "Assets/docs/plans/run-state-manager", "startedAt": "2025-11-03T00:00:00Z", "completedAt": "2025-11-03T00:02:00Z", "error": null },
+				{ "id": "4.2", "name": "Meta Progression (Optional)", "subtasks": ["Persist unlocks", "Save format and migration plan"], "status": "done", "planFolder": "Assets/docs/plans/meta-progression-optional", "startedAt": "2025-11-03T12:00:00Z", "completedAt": "2025-11-03T12:10:00Z", "error": null }
+				,
+				{ "id": "4.3", "name": "Save System & Migration", "subtasks": ["Define save schema", "Serialization + version tag", "Migration stub", "Load/save tests"], "status": "done", "planFolder": "Assets/docs/plans/save-system-migration", "startedAt": "2025-11-04T00:00:00Z", "completedAt": "2025-11-04T00:10:00Z", "error": null, "originGap": "GAP-001", "createdDate": "2025-11-01T00:00:00Z", "tags": ["persistence","data-integrity"] },
+				{ "id": "4.4", "name": "Achievements Framework", "subtasks": ["Achievement schema", "Evaluation dispatcher", "Persistence integration", "Sample achievements"], "status": "done", "planFolder": "Assets/docs/plans/achievements-framework", "startedAt": "2025-11-04T12:15:00Z", "completedAt": "2025-11-04T12:20:00Z", "error": null, "originGap": "GAP-005", "createdDate": "2025-11-01T00:00:00Z", "tags": ["meta","progression"] }
+				,{ "id": "4.5", "name": "Shop System", "subtasks": ["UI scaffold", "Inventory listing", "Purchase flow"], "status": "pending", "planFolder": null, "createdDate": "2025-11-04T00:00:00Z", "tags": ["feature-request","economy"], "slug": "shop-system" }
+				,{ "id": "4.6", "name": "Currency System", "subtasks": ["Define currency model", "Persist & modify on events", "Display and formatting"], "status": "pending", "planFolder": null, "createdDate": "2025-11-04T00:00:00Z", "tags": ["feature-request","economy"], "slug": "currency-system" }
+				,{ "id": "4.7", "name": "Event System (Narrative / Random)", "subtasks": ["Event schema", "Random selection weighting", "Branching outcome support"], "status": "pending", "planFolder": null, "createdDate": "2025-11-04T00:00:00Z", "tags": ["feature-request","events"], "slug": "event-system" }
+				,{ "id": "4.8", "name": "Map & Node Graph System", "subtasks": ["Node graph data model", "Path selection UI", "Encounter + event linking"], "status": "pending", "planFolder": null, "createdDate": "2025-11-04T00:00:00Z", "tags": ["feature-request","map","progression"], "slug": "map-node-graph-system" }
+			]
+		},
+		{
+			"name": "Phase5: Testing & Validation",
+			"tasks": [
+				{ "id": "5.1", "name": "Unit Tests", "subtasks": ["Use Unity Test Framework", "Tests for core logic"], "status": "pending", "planFolder": null, "startedAt": null, "completedAt": null, "error": null },
+				{ "id": "5.2", "name": "Schema Compliance Tests", "subtasks": ["Run schema validation on JSON content", "Fail build or warn on invalid content"], "status": "pending", "planFolder": null, "startedAt": null, "completedAt": null, "error": null },
+				{ "id": "5.3", "name": "Editor Tool QA", "subtasks": ["Test JSON import", "Test ScriptableObject creation"], "status": "pending", "planFolder": null, "startedAt": null, "completedAt": null, "error": null }
+				,
+				{ "id": "5.4", "name": "Run Telemetry Logger", "subtasks": ["Define event model", "Implement logger", "Config toggle", "Sample log test"], "status": "pending", "planFolder": null, "startedAt": null, "completedAt": null, "error": null, "originGap": "GAP-002", "createdDate": "2025-11-01T00:00:00Z", "tags": ["telemetry","monitoring"] },
+				{ "id": "5.5", "name": "Deterministic RNG Seed Harness", "subtasks": ["Central seed manager", "Run re-seed", "Repeat-run equivalence tests", "Override mechanism"], "status": "pending", "planFolder": null, "startedAt": null, "completedAt": null, "error": null, "originGap": "GAP-004", "createdDate": "2025-11-01T00:00:00Z", "tags": ["testing","determinism"] },
+				{ "id": "5.6", "name": "Data Integrity Checks", "subtasks": ["ID uniqueness scanner", "Cross-reference resolver", "Report generation", "Build-time validation"], "status": "pending", "planFolder": null, "startedAt": null, "completedAt": null, "error": null, "originGap": "GAP-007", "createdDate": "2025-11-01T00:00:00Z", "tags": ["validation","data-integrity"] }
+				,{ "id": "5.7", "name": "Run Summary & Telemetry Integration", "subtasks": ["Aggregate end-of-run stats", "Persist summary record", "Surface telemetry dashboard"], "status": "pending", "planFolder": null, "createdDate": "2025-11-04T00:00:00Z", "tags": ["feature-request","telemetry","analytics"], "slug": "run-summary-telemetry", "dependencies": ["5.4"] }
+				,{ "id": "5.8", "name": "Synergy Detection Engine", "subtasks": ["Define synergy heuristics", "Real-time deck analysis", "Expose suggestions UI"], "status": "pending", "planFolder": null, "createdDate": "2025-11-04T00:00:00Z", "tags": ["feature-request","analysis","deck"], "slug": "synergy-detection-engine" }
+			]
+		},
+		{
+			"name": "Phase6: Packaging & CI Integration",
+			"tasks": [
+				{ "id": "6.1", "name": "Folder Structure Enforcement", "subtasks": ["Validate asset placement", "Auto-fix misplaced files"], "status": "pending", "planFolder": null, "startedAt": null, "completedAt": null, "error": null },
+				{ "id": "6.2", "name": "CI Pipeline Hooks", "subtasks": ["Schema validation step", "Run unit tests in CI"], "status": "pending", "planFolder": null, "startedAt": null, "completedAt": null, "error": null }
+				,
+				{ "id": "6.3", "name": "Schema Doc Generation", "subtasks": ["Parse schemas", "Generate markdown docs", "Link from requirements"], "status": "pending", "planFolder": null, "startedAt": null, "completedAt": null, "error": null, "originGap": "GAP-011", "createdDate": "2025-11-01T00:00:00Z", "tags": ["documentation"] }
+			]
+		}
+	]
+}

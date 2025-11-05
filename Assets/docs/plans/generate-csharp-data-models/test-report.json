@@ -1,0 +1,21 @@
+{
+  "task": "1.3",
+  "coverage": 0.78,
+  "files": [
+    { "path": "Assets/Scripts/DataModels/Card.generated.cs", "coverage": 0.85 },
+    { "path": "Assets/Scripts/DataModels/Blessing.generated.cs", "coverage": 0.8 },
+    { "path": "Assets/Scripts/DataModels/Equipment.generated.cs", "coverage": 0.7 },
+    { "path": "Assets/Scripts/DataModels/SkillTree.generated.cs", "coverage": 0.77 }
+  ],
+  "generatedTests": [
+    "Assets/Tests/DataModels/CardTests.cs",
+    "Assets/Tests/DataModels/BlessingTests.cs",
+    "Assets/Tests/DataModels/EquipmentTests.cs",
+    "Assets/Tests/DataModels/SkillTreeTests.cs"
+  ],
+  "integrationTests": [],
+  "iterations": 1,
+  "status": "partial",
+  "notes": "Coverage estimated heuristically by mapping tested serialization/field access to file lines. If you run Unity Coverage tooling, update this report with actual numbers.",
+  "timestamp": "2025-11-01T12:12:00Z"
+}

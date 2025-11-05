@@ -1,0 +1,29 @@
+{
+  "task": "Performance Baseline & Pooling",
+  "objective": "Establish a performance baseline and implement reusable pooling utilities to reduce runtime allocations and GC pressure.",
+  "prerequisites": [
+    "${workspaceFolder}",
+    "Assets/docs/roadmap.json",
+    "Assets/docs/requirements.md",
+    "Assets/docs/schemas/",
+    "Access to gameplay code under Assets/Core/ and Assets/Scripts/"
+  ],
+  "steps": [
+    { "step": 1, "title": "Instrumentation & Baseline", "description": "Add profiling markers, run scenarios, and record frame-time and allocation metrics under benchmarks/." },
+    { "step": 2, "title": "Low-Risk Pooling Implementation", "description": "Create a lightweight Pool<T> and GameObjectPool under Assets/Scripts/Utilities/Pooling/ and implement warm-up semantics." },
+    { "step": 3, "title": "Integrate & Replace Instantiation Sites", "description": "Replace high-churn Instantiate/Destroy sites with pooling where it yields measurable benefit." },
+    { "step": 4, "title": "Re-benchmark & Validate", "description": "Re-run benchmarks, compare metrics, and ensure no regressions." },
+    { "step": 5, "title": "Documentation & Deliverables", "description": "Add migration guide, usage examples, and store benchmark results in the plan folder." }
+  ],
+  "deliverables": [
+    "Assets/docs/plans/performance-baseline-pooling/plan.md",
+    "Assets/docs/plans/performance-baseline-pooling/plan.json",
+    "Assets/docs/plans/performance-baseline-pooling/benchmarks/",
+    "Assets/Scripts/Utilities/Pooling/ (suggested implementation)"
+  ],
+  "notes": [
+    "Use Unity Profiler markers for editor runs and headless batch mode for CI.",
+    "Prefer minimal, well-tested changes when replacing allocation hotspots.",
+    "Record before/after benchmark snapshots to the plan folder for traceability."
+  ]
+}

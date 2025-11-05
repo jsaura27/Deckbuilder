@@ -1,0 +1,34 @@
+{
+  "taskId": "2.1",
+  "taskName": "Create ScriptableObject Base Classes",
+  "timestamp": "2025-11-01T00:00:00Z",
+  "filesCreated": [
+    "Assets/Scripts/ScriptableObjects/Base/Enums.cs",
+    "Assets/Scripts/ScriptableObjects/Base/DefinitionBase.cs",
+    "Assets/Scripts/ScriptableObjects/Definitions/CardDefinition.cs",
+    "Assets/Scripts/ScriptableObjects/Definitions/BlessingDefinition.cs",
+    "Assets/Scripts/ScriptableObjects/Definitions/EquipmentDefinition.cs",
+    "Assets/Scripts/ScriptableObjects/Definitions/SkillTreeDefinition.cs",
+    "Assets/Scripts/ScriptableObjects/README_ScriptableObjects.md"
+  ],
+  "testGenerationAttempt": {
+    "timestamp": "2025-11-01T12:40:00Z",
+    "outcome": "partial",
+    "reason": "Generated EditMode tests for ScriptableObject definitions focusing on CreateAssetMenu attribute, list initialization, and CollectValidationIssues.",
+    "generatedFiles": [
+      "Assets/Tests/ScriptableObjects/CardDefinitionTests.cs",
+      "Assets/Tests/ScriptableObjects/BlessingDefinitionTests.cs",
+      "Assets/Tests/ScriptableObjects/EquipmentDefinitionTests.cs",
+      "Assets/Tests/ScriptableObjects/SkillTreeDefinitionTests.cs",
+      "Assets/docs/plans/create-scriptableobject-base-classes/test-plan.md",
+      "Assets/docs/plans/create-scriptableobject-base-classes/test-report.json"
+    ],
+    "estimatedCoverage": 0.65
+  },
+  "filesEdited": [],
+  "notes": [
+    "Initial scaffolding only; gameplay logic intentionally absent.",
+    "Validation currently logs warnings in OnValidate; may gate behind a static toggle later."
+  ],
+  "status": "done"
+}

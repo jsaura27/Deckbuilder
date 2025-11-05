@@ -1,0 +1,25 @@
+{
+ "$schema": "http://json-schema.org/draft-07/schema#",
+ "title": "Blessing",
+ "type": "object",
+ "required": ["id", "name"],
+ "properties": {
+ "id": { "type": "string" },
+ "name": { "type": "string" },
+ "rarity": { "type": "string", "enum": ["Common", "Rare", "Epic", "Legendary"] },
+ "description": { "type": "string" },
+ "baseEffect": { "type": "object" },
+ "triggers": { "type": "array", "items": { "type": "string" } },
+ "evolution": {
+ "type": "array",
+ "items": {
+ "type": "object",
+ "properties": {
+ "stage": { "type": "integer" },
+ "condition": { "type": "string" },
+ "resultingEffect": { "type": "object" }
+ }
+ }
+ }
+ }
+}

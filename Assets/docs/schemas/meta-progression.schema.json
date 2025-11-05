@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/meta-progression.schema.json",
+  "title": "Meta Progression",
+  "type": "object",
+  "required": ["version", "unlockedClasses", "createdAt"],
+  "properties": {
+    "version": { "type": "string" },
+    "unlockedClasses": { "type": "array", "items": { "type": "string" } },
+    "unlockedCards": { "type": "array", "items": { "type": "string" } },
+    "unlockedBlessings": { "type": "array", "items": { "type": "string" } },
+    "unlockedEquipment": { "type": "array", "items": { "type": "string" } },
+    "achievements": { "type": "array", "items": { "type": "string" } },
+    "createdAt": { "type": "string", "format": "date-time" },
+    "modifiedAt": { "type": ["string", "null"], "format": "date-time" }
+  },
+  "additionalProperties": false
+}

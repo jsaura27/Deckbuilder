@@ -1,0 +1,31 @@
+{
+  "task": "Add Schema-Driven Fields",
+  "objective": "Add schema-driven fields to ScriptableObject base classes so they match JSON schemas for cards, equipment, blessings, and skill trees.",
+  "prerequisites": [
+    "Assets/docs/schemas/cards.schema.json",
+    "Assets/docs/schemas/equipment.schema.json",
+    "Assets/docs/schemas/blessings.schema.json",
+    "Assets/docs/schemas/skilltree.schema.json",
+    "Task 2.1 Create ScriptableObject Base Classes completed"
+  ],
+  "steps": [
+    { "step": 1, "title": "Extract schema properties", "description": "Inspect schema files and extract required and optional properties for each domain." },
+    { "step": 2, "title": "Design C# types", "description": "Create enums and classes matching schema properties; decide which become ScriptableObjects vs POCOs." },
+    { "step": 3, "title": "Implement ScriptableObjects", "description": "Create ScriptableObject files (CardDefinition, EquipmentDefinition, BlessingDefinition, SkillTreeDefinition) with CreateAssetMenu attributes." },
+    { "step": 4, "title": "Add serialization helpers", "description": "Add small helpers for polymorphic 'effects' and cross-reference id resolution." },
+    { "step": 5, "title": "Place files and namespace", "description": "Place files under Assets/Scripts/DataModels/ and adopt consistent namespace like Deckbuilder.DataModels." },
+    { "step": 6, "title": "Create minimal tests", "description": "Add smoke tests that create instances of ScriptableObjects and validate required fields exist." },
+    { "step": 7, "title": "Document mapping", "description": "Add comments and a mapping.json if needed to map schema properties to C# fields." }
+  ],
+  "deliverables": [
+    "Assets/docs/plans/add-schema-driven-fields/plan.md",
+    "Assets/docs/plans/add-schema-driven-fields/plan.json",
+    "C# ScriptableObject source files under Assets/Scripts/DataModels/",
+    "Optional Unity Test Framework tests under Assets/Tests/"
+  ],
+  "notes": [
+    "Start simple for 'effects' polymorphism; iterate as requirements solidify.",
+    "Prefer enums for schema enums and document mapping to schema files.",
+    "Use relative file paths in documentation and comments."
+  ]
+}

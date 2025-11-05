@@ -1,0 +1,30 @@
+{
+  "task": "Status Effects Catalog",
+  "objective": "Create a comprehensive catalog and data model for status effects used in combat, including schema, data models, tests, and integration points.",
+  "prerequisites": [
+    "Assets/docs/requirements.md",
+    "Assets/docs/schemas/",
+    "Scan Assets/Scripts/ for combat and effect pipelines"
+  ],
+  "steps": [
+    { "step": 1, "title": "Enumerate Effects", "description": "Create master list with id, displayName, description, stacking rules, duration semantics, tags, and type." },
+    { "step": 2, "title": "Define Data Schema", "description": "Add or extend assets/docs/schemas/status-effects.schema.json with fields for stacking, duration, effects array, and source whitelist." },
+    { "step": 3, "title": "Implement C# Data Models", "description": "Create ScriptableObject StatusEffectDefinition under Assets/Scripts/DataModels/ with inspector-friendly fields." },
+    { "step": 4, "title": "Integrate with Combat Pipeline", "description": "Wire StatusEffectManager to apply, tick, and expire effects; add telemetry hooks." },
+    { "step": 5, "title": "Unit Tests", "description": "Add Unity Test Framework tests for stacking, duration, expiry, and interactions." },
+    { "step": 6, "title": "Examples & Migration", "description": "Add example JSON files and migration notes; include sample ScriptableObjects." }
+  ],
+  "deliverables": [
+    "plan.md",
+    "plan.json",
+    "Assets/docs/schemas/status-effects.schema.json",
+    "Assets/Scripts/DataModels/StatusEffectDefinition.cs",
+    "Assets/Tests/StatusEffectsTests.cs",
+    "Assets/docs/plans/status-effects-catalog/examples/"
+  ],
+  "notes": [
+    "Use relative paths",
+    "Tag: combat, data, testing"
+  ],
+  "tags": ["combat","data","testing"]
+}

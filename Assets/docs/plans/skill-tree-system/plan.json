@@ -1,0 +1,87 @@
+{
+  "task": "Skill Tree System",
+  "objective": "Design and implement the Skill Tree System including branch selection UI, node unlock mechanics, prerequisite validation, conditional unlock evaluation, and class evolution triggers integrated into the run lifecycle.",
+  "prerequisites": [
+    "Assets/docs/requirements.md",
+    "Assets/docs/requirements.json",
+    "Assets/docs/schemas/skilltree.schema.json",
+    "Assets/Scripts/ScriptableObjects/Definitions/SkillTreeDefinition.cs",
+    "Assets/Scripts/DataModels/SkillTreeDefinition.cs",
+    "Character/class system foundation",
+    "Run state manager"
+  ],
+  "steps": [
+    {
+      "step": 1,
+      "title": "Review and extend data model",
+      "description": "Audit skilltree.schema.json for completeness. Ensure SkillNode includes id, type, cost, prerequisites, conditionalUnlock, effect. Define 4-branch structure (Offense, Defense, Utility, Chaos). Validate existing SkillTreeDefinition ScriptableObject matches schema."
+    },
+    {
+      "step": 2,
+      "title": "Implement runtime data structures",
+      "description": "Create SkillTreeRuntimeState class to track selected branch, unlocked nodes, available skill points, and class evolution stage. Add serialization for run snapshot persistence."
+    },
+    {
+      "step": 3,
+      "title": "Create SkillTreeService interface and implementation",
+      "description": "Define ISkillTreeService with methods: SelectBranch, UnlockNode, CanUnlockNode, GetUnlockedNodes, GetAvailableNodes, ResetTree. Implement SkillTreeManager MonoBehaviour. Use dependency injection for service access."
+    },
+    {
+      "step": 4,
+      "title": "Implement prerequisite validation",
+      "description": "Check all prerequisite node ids are in unlocked set. Validate prerequisites graph at load time for circular dependencies. Log validation warnings in editor."
+    },
+    {
+      "step": 5,
+      "title": "Implement conditional unlock system",
+      "description": "Define expression evaluator for conditionalUnlock strings. Create ConditionalUnlockEvaluator class. Hook into run event system for condition tracking. Store progress in SkillTreeRuntimeState."
+    },
+    {
+      "step": 6,
+      "title": "Class evolution integration",
+      "description": "Define class evolution rules in skill tree data. Add classEvolution field to schema if needed. Trigger evolution when specific node unlocked. Integrate with character system for stat/ability changes."
+    },
+    {
+      "step": 7,
+      "title": "Branch selection UI",
+      "description": "Create UI prefab for branch selection and skill tree panel. Implement SkillTreeUI MonoBehaviour to display branches, available nodes, prerequisites, costs. Wire to SkillTreeService."
+    },
+    {
+      "step": 8,
+      "title": "Integration with run lifecycle",
+      "description": "Hook ResetTree to run start. Display branch selection after initialization. Lock branch after selection. Add skill tree UI to pause menu. Save state in run snapshot."
+    },
+    {
+      "step": 9,
+      "title": "Effect application system",
+      "description": "Define skill node effect types (stat modifiers, ability unlocks, passives). Create SkillNodeEffect base class and concrete implementations. Apply on unlock, remove on reset. Integrate with combat/card/character systems."
+    },
+    {
+      "step": 10,
+      "title": "Tests and validation",
+      "description": "Unit tests for prerequisite validation, conditional unlocks, branch selection, node unlock flow. Integration test for full run lifecycle. Schema compliance tests for skill tree JSON."
+    }
+  ],
+  "deliverables": [
+    "Assets/Scripts/Systems/SkillTree/SkillTreeRuntimeState.cs",
+    "Assets/Scripts/Services/ISkillTreeService.cs",
+    "Assets/Scripts/Systems/SkillTree/SkillTreeManager.cs",
+    "Assets/Scripts/Systems/SkillTree/Conditions/ConditionalUnlockEvaluator.cs",
+    "Assets/Scripts/Systems/SkillTree/Effects/",
+    "Assets/Scripts/UI/SkillTreeUI.cs",
+    "Assets/Prefabs/UI/SkillTree/",
+    "Assets/Tests/SkillTreeTests/",
+    "Assets/Tests/Integration/SkillTreeIntegrationTests/",
+    "Assets/docs/plans/skill-tree-system/plan.json"
+  ],
+  "notes": [
+    "Skill tree resets every run; branch selection is one-time at run start.",
+    "Prerequisites must form DAG; validate at load time.",
+    "Conditional unlocks require event tracking; design extensible condition system.",
+    "Class evolution triggered by specific nodes; document evolution paths.",
+    "Use ScriptableObject assets; JSON import tool generates these.",
+    "Define skill point acquisition rules (level-up, events).",
+    "Effect application must be reversible for run reset.",
+    "Consider caching available nodes to optimize UI updates."
+  ]
+}

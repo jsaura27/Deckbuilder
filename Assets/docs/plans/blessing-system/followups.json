@@ -1,0 +1,28 @@
+{
+  "task": "3.4",
+  "missingDeliverables": [],
+  "unfulfilledSteps": ["Schema compliance validation", "Integration with Combat & Card systems"],
+  "testGaps": ["Conditional evolution scenarios (non-ALWAYS conditions)", "Importer schema validation test"],
+  "suggestedTasks": [
+    {
+      "id": "3.4-tests-schema",
+      "title": "Add schema compliance tests for Blessings",
+      "rationale": "Ensure blessing JSON assets conform to blessings.schema.json and fail early on invalid data.",
+      "estimatedEffort": "S",
+      "status": "completed",
+      "artifacts": [
+        "Assets/Tests/BlessingSchemaComplianceTests.cs",
+        "Assets/Tests/Utils/JsonSchemaLiteValidator.cs",
+        "Assets/Tests/Utils/JsonUtilityWrapper.cs"
+      ],
+      "notes": "Lightweight validator added; run Unity Test Runner to execute."
+    },
+    {
+      "id": "3.4-evolution-conditions",
+      "title": "Implement complex evolution condition resolver",
+      "rationale": "Support data-driven counters/flags beyond ALWAYS and add tests.",
+      "estimatedEffort": "M"
+    }
+  ],
+  "buildFixHints": ["Run Unity to confirm tests compile.", "Consider adding a BlessingConditionResolver service for extensibility."]
+}

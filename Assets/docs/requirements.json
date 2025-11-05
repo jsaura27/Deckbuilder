@@ -1,0 +1,50 @@
+{
+ "title": "Rogue-lite Deckbuilder - Requirements",
+ "version": "1.0",
+ "platform": ["Windows", "macOS"],
+ "perspective": "2D or isometric",
+ "coreLoop": ["Explore", "Battle", "Acquire", "Evolve", "Reset"],
+ "playableClasses": ["Warrior", "Rogue", "Mage"],
+ "systems": {
+ "characterSystem": {
+ "leveling": {
+ "levelsResetEachRun": true,
+ "xpPerLevel": "data-driven"
+ },
+ "skillTree": {
+ "branches": ["Offense", "Defense", "Utility", "Chaos"],
+ "chooseOneBranchPerRun": true,
+ "nodes": "modular"
+ }
+ },
+ "equipmentSystem": {
+ "rarityTiers": ["Common", "Rare", "Epic", "Legendary"],
+ "slotTypes": ["Weapon", "Armor", "Trinket"]
+ },
+ "blessingsSystem": {
+ "rarityTiers": ["Common", "Rare", "Epic", "Legendary"],
+ "evolution": "data-driven"
+ },
+ "cardSystem": {
+ "types": ["Attack", "Defense", "Utility", "Curse"],
+ "deckResetsEachRun": true
+ },
+ "combatSystem": {
+ "turnBased": true,
+ "flow": ["Draw Phase", "Action Phase", "Enemy Turn", "Resolution"]
+ }
+ },
+ "technical": {
+ "dataDriven": ["JSON", "ScriptableObject"],
+ "saveMetaProgression": true,
+ "offline": true
+ },
+ "deliverables": [
+ "requirements.md",
+ "requirements.json",
+ "schemas/cards.schema.json",
+ "schemas/blessings.schema.json",
+ "schemas/equipment.schema.json",
+ "schemas/skilltree.schema.json"
+ ]
+}

@@ -1,0 +1,35 @@
+{
+ "$schema": "http://json-schema.org/draft-07/schema#",
+ "title": "SkillTree",
+ "type": "object",
+ "required": ["id", "classId", "branches"],
+ "properties": {
+ "id": { "type": "string" },
+ "classId": { "type": "string" },
+ "branches": {
+ "type": "array",
+ "items": {
+ "type": "object",
+ "required": ["name", "nodes"],
+ "properties": {
+ "name": { "type": "string" },
+ "nodes": {
+ "type": "array",
+ "items": {
+ "type": "object",
+ "required": ["id", "type"],
+ "properties": {
+ "id": { "type": "string" },
+ "type": { "type": "string" },
+ "cost": { "type": "integer" },
+ "prerequisites": { "type": "array", "items": { "type": "string" } },
+ "conditionalUnlock": { "type": "string" },
+ "effect": { "type": "object" }
+ }
+ }
+ }
+ }
+ }
+ }
+ }
+}

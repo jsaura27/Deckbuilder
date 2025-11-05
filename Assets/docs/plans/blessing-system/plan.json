@@ -1,0 +1,29 @@
+{
+  "task": "Blessing System",
+  "objective": "Design and implement the Blessing System including data, editor importer, runtime manager, evolution mechanics, and tests.",
+  "prerequisites": [
+    "Assets/docs/requirements.md",
+    "Assets/docs/schemas/blessings.schema.json",
+    "Assets/docs/plans/json-import-validation-tool"
+  ],
+  "steps": [
+    { "step": 1, "title": "Analyze Schema", "description": "Review blessings.schema.json and enumerate required fields, enums, and evolution model." },
+    { "step": 2, "title": "Author Data Models", "description": "Create POCOs and ScriptableObject definitions mirroring schema under Assets/Scripts/DataModels/." },
+    { "step": 3, "title": "Create ScriptableObjects", "description": "Implement BlessingDefinition ScriptableObject with CreateAssetMenu attribute." },
+    { "step": 4, "title": "Editor Importer", "description": "Add JSON importer that validates against schema and creates ScriptableObjects." },
+    { "step": 5, "title": "Runtime Manager", "description": "Implement BlessingManager to handle acquisition, evaluation, and application of blessings." },
+    { "step": 6, "title": "Evolution Mechanics", "description": "Implement deterministic triggers and stage progression for blessings." },
+    { "step": 7, "title": "Integrate & Test", "description": "Integrate with Combat and Card systems; add unit and schema compliance tests." }
+  ],
+  "deliverables": [
+    "Assets/Scripts/DataModels/BlessingDefinition.cs",
+    "Assets/Scripts/Systems/BlessingManager.cs",
+    "Assets/Editor/Importers/BlessingJsonImporter.cs",
+    "Assets/docs/plans/blessing-system/plan.json",
+    "Assets/docs/plans/blessing-system/plan.md"
+  ],
+  "notes": [
+    "Follow project conventions for namespaces and folders.",
+    "Use relative paths and reference Assets/docs/schemas/blessings.schema.json for data constraints."
+  ]
+}

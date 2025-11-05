@@ -1,0 +1,9 @@
+{
+  "id": "burn",
+  "name": "Burn",
+  "description": "Deals damage over time each turn.",
+  "stacking": { "mode": "stack", "maxStacks": 5 },
+  "duration": { "type": "turns", "value": 3 },
+  "effects": [ { "type": "damageOverTime", "params": { "damagePerStack": 2 } } ],
+  "sourceWhitelist": [ "card", "equipment" ]
+}

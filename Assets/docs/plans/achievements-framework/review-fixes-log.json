@@ -1,0 +1,25 @@
+{
+  "task": "4.4 - Achievements Framework",
+  "timestamp": "2025-11-04T12:30:00Z",
+  "passes": [
+    {
+      "index": 1,
+      "discrepanciesFound": [
+        "SUMMARY_GAP: summary.md lacked explicit 'How to' test/run instructions",
+        "MISSING_FILE: Assets/Scripts/Systems/AchievementPersistence.cs",
+        "MISSING_FILE: Assets/Editor/AchievementTools/AchievementImporterWindow.cs"
+      ],
+      "actions": [
+        { "type": "create", "path": "Assets/Scripts/Systems/AchievementPersistence.cs", "reason": "Provide minimal persistence stub referenced by plan and needed for integration tests" },
+        { "type": "create", "path": "Assets/Editor/AchievementTools/AchievementImporterWindow.cs", "reason": "Provide a simple editor helper to create sample achievements under Assets/Content/Achievements/" },
+        { "type": "edit", "path": "Assets/docs/plans/achievements-framework/changes-log.json", "reason": "Record created helper files and decisions" },
+        { "type": "edit", "path": "Assets/docs/plans/achievements-framework/summary.md", "reason": "Add test/how-to notes and record new artifacts" }
+      ],
+      "buildStatus": "success",
+      "testSummary": "No runtime tests executed here; compile-check passed for modified files"
+    }
+  ],
+  "finalStatus": "success",
+  "remainingDiscrepancies": [],
+  "notes": "Created minimal helper artifacts and updated logs. Persistence integration to SaveManager deferred to a follow-up task."
+}

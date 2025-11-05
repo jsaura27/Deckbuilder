@@ -1,0 +1,31 @@
+{
+  "task": "Combat System",
+  "id": "3.2",
+  "objective": "Design and implement the turn-based combat manager, resolution pipeline, status effects manager, and enemy AI interface.",
+  "prerequisites": [
+    "Assets/docs/requirements.md",
+    "Assets/docs/plans/card-system/plan.json",
+    "Assets/docs/schemas/cards.schema.json",
+    "Assets/docs/schemas/blessings.schema.json"
+  ],
+  "steps": [
+    { "step": 1, "title": "Analysis & Design", "description": "Review requirements and define responsibilities: TurnManager, Action queue, Resolution pipeline, StatusEffectManager, Enemy AI interface." },
+    { "step": 2, "title": "Data & Models", "description": "Create runtime C# classes under Assets/Scripts/Combat: TurnManager, CombatState, ICombatant, PlayerCombatant, EnemyCombatant." },
+    { "step": 3, "title": "Status Effects Manager", "description": "Implement StatusEffect base type and core concrete effects with stacking/duration semantics." },
+    { "step": 4, "title": "Action & Resolution Pipeline", "description": "Implement Action abstractions and effect resolution as testable pure functions where possible." },
+    { "step": 5, "title": "Enemy AI Interface", "description": "Define IEnemyAI and provide PatternAI and ConditionalAI implementations for tests." },
+    { "step": 6, "title": "Integration & Editor Tools", "description": "Hook equipment, blessings, and skill nodes into pipeline; build small editor harness to simulate combats." },
+    { "step": 7, "title": "Tests & Validation", "description": "Add unit and integration tests for deterministic combat scenarios and status effect rules." }
+  ],
+  "deliverables": [
+    "Assets/docs/plans/combat-system/plan.md",
+    "Assets/docs/plans/combat-system/plan.json",
+    "Assets/Scripts/Combat/",
+    "Assets/Tests/CombatTests/"
+  ],
+  "notes": [
+    "Prefer dependency-inversion for effect side-effects",
+    "Keep resolution logic testable without UnityEngine references where possible",
+    "Use relative workspace variables when referencing paths"
+  ]
+}

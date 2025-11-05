@@ -1,0 +1,27 @@
+{
+  "task": "2.2",
+  "coverage": 0.42,
+  "files": [
+    { "path": "Assets/Scripts/DataModels/CardDefinition.cs", "coverage": 0.6, "totalLines": 120 },
+    { "path": "Assets/Scripts/DataModels/EffectDefinition.cs", "coverage": 0.9, "totalLines": 40 },
+    { "path": "Assets/Scripts/DataModels/Enums.cs", "coverage": 0.3, "totalLines": 30 },
+    { "path": "Assets/Scripts/DataModels/EquipmentDefinition.cs", "coverage": 0.0, "totalLines": 80 },
+    { "path": "Assets/Scripts/DataModels/BlessingDefinition.cs", "coverage": 0.0, "totalLines": 60 },
+    { "path": "Assets/Scripts/DataModels/SkillTreeDefinition.cs", "coverage": 0.0, "totalLines": 100 }
+  ],
+  "generatedTests": [
+    "Assets/Tests/Editor/DataModels/CardDefinitionTests_Extended.cs",
+    "Assets/Tests/Editor/DataModels/EffectDefinitionTests_Extended.cs"
+  ],
+  "integrationTests": [
+    "Assets/Tests/Integration/DataModels/ScriptableObjectCreationIntegrationTests.cs"
+  ],
+  "iterations": 1,
+  "status": "partial",
+  "reason": "Only smoke/unit tests generated; full 80% coverage not achievable without additional tests for Equipment/Blessing/SkillTree or running Unity test runner instrumentation.",
+  "methodCoverageHeuristic": {
+    "totalMethods": 18,
+    "testedMethods": 6,
+    "estimatedCoverage": 0.42
+  }
+}

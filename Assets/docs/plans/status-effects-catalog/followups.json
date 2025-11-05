@@ -1,0 +1,32 @@
+{
+  "task": "3.7",
+  "missingDeliverables": [],
+  "unfulfilledSteps": [
+    "Integrate with combat pipeline (Step 4): requires runtime integration with StatusEffectManager and scene context",
+    "Full unit/integration test execution (Step 5): Editor and PlayMode tests need to be executed in Unity or CI"
+  ],
+  "testGaps": [
+    "Assets/Tests/StatusEffectsTests.cs created but not executed",
+    "Editor tests in Assets/Tests/Editor not executed"
+  ],
+  "suggestedTasks": [
+    {
+      "id": "3.7-tests",
+      "title": "Run and validate Status Effects tests",
+      "rationale": "Execute Editor and PlayMode tests locally or in CI; fix any failures and update changes-log.json.tests with results.",
+      "estimatedEffort": "S"
+    },
+    {
+      "id": "3.7-integration",
+      "title": "Integrate StatusEffectManager into combat pipeline",
+      "rationale": "Complete runtime integration and add integration tests to validate stacking, expiry, and interactions.",
+      "estimatedEffort": "M"
+    }
+  ],
+  "buildFixHints": [
+    "Open project in Unity and run EditMode tests via Test Runner; if compilation errors occur, inspect missing namespaces or assembly definitions for test assemblies.",
+    "Ensure test files are placed under test assemblies recognized by Unity (Assembly Definitions or Editor test folders).",
+    "If Unity reports missing type errors, ensure namespaces match and that files are included in assembly definitions.",
+    "Run 'Assets -> Reimport All' in Unity if newly added ScriptableObjects aren't recognized."
+  ]
+}

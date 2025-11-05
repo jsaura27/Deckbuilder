@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Save Schema",
+  "type": "object",
+  "properties": {
+    "version": { "type": "string" },
+    "createdAt": { "type": "string", "format": "date-time" },
+    "contentVersion": { "type": "string" },
+    "seed": { "type": "string" },
+    "payload": { "$ref": "meta-progression.schema.json" }
+  },
+  "required": ["version", "createdAt", "payload"]
+}

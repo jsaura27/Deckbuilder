@@ -1,0 +1,16 @@
+{
+  "task": "2.3",
+  "coverage": null,
+  "files": [
+    { "path": "Assets/Editor/Tools/JsonImportValidator.cs", "coverage": null }
+  ],
+  "generatedTests": ["Assets/Tests/Editor/EditorTools/JsonImportValidatorTests_Extended.cs"],
+  "integrationTests": [],
+  "iterations": 1,
+  "status": "partial",
+  "methodCoverageHeuristic": {
+    "totalPublicMethods": 2,
+    "testedPublicMethods": 2
+  },
+  "reason": "Coverage instrumentation unavailable in this environment; method-level heuristic used."
+}

@@ -1,0 +1,34 @@
+{
+ "$schema": "http://json-schema.org/draft-07/schema#",
+ "title": "Card",
+ "type": "object",
+ "required": ["id", "name", "type", "cost"],
+ "properties": {
+ "id": { "type": "string" },
+ "name": { "type": "string" },
+ "type": { "type": "string", "enum": ["Attack", "Defense", "Utility", "Curse"] },
+ "cost": { "type": "integer", "minimum":0 },
+ "rarity": { "type": "string", "enum": ["Common", "Rare", "Epic", "Legendary"] },
+ "description": { "type": "string" },
+ "effects": {
+ "type": "array",
+ "items": {
+ "type": "object",
+ "required": ["effectType"],
+ "properties": {
+ "effectType": { "type": "string" },
+ "value": { "type": ["number", "string", "object"] },
+ "target": { "type": "string", "enum": ["Self", "Enemy", "AllEnemies", "AllAllies"] }
+ }
+ }
+ },
+ "tags": { "type": "array", "items": { "type": "string" } },
+ "upgradePath": {
+ "type": "object",
+ "properties": {
+ "upgradedId": { "type": "string" },
+ "cost": { "type": "integer" }
+ }
+ }
+ }
+}

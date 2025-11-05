@@ -1,0 +1,28 @@
+{
+  "task": "Load & Validate Schemas",
+  "objective": "Load all JSON schemas, validate their syntax and references, validate sample JSON data, and produce a validation report with remediation guidance.",
+  "prerequisites": [
+    "Assets/docs/schemas/",
+    "Assets/docs/requirements.md",
+    "Node.js (optional) or Python (optional) for automation scripts"
+  ],
+  "steps": [
+    { "step": 1, "title": "Inventory schemas", "description": "List files in Assets/docs/schemas/ and record paths." },
+    { "step": 2, "title": "Syntactic validation", "description": "Parse each schema as JSON to detect syntax errors." },
+    { "step": 3, "title": "Semantic/schema validation", "description": "Validate schemas with a JSON Schema validator (AJV or equivalent) and resolve $ref references." },
+    { "step": 4, "title": "Validate sample data", "description": "Find sample JSON files and validate them against the corresponding schemas; record failures." },
+    { "step": 5, "title": "Produce report", "description": "Write validation-report.md summarizing results and suggested fixes." },
+    { "step": 6, "title": "Optional automation", "description": "Add scripts to automate validation using AJV (Node) or Python jsonschema." }
+  ],
+  "deliverables": [
+    "Assets/docs/plans/load-validate-schemas/plan.md",
+    "Assets/docs/plans/load-validate-schemas/plan.json",
+    "Assets/docs/plans/load-validate-schemas/validation-report.md (after running validations)",
+    "Optional: scripts/validate-schemas.js or scripts/validate_schemas.py"
+  ],
+  "notes": [
+    "Use relative paths for references.",
+    "If schemas reference external URIs, consider mirroring them under Assets/docs/schemas/external/.",
+    "Prefer a validator that matches the schema draft in use (try Draft-07 and 2019-09 if unknown)."
+  ]
+}

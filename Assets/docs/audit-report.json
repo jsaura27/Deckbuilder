@@ -1,0 +1,92 @@
+{
+  "summary": {
+    "totalTasks": 40,
+    "gaps": 10,
+    "tasksAdded": 9,
+    "pendingCount": 18,
+    "coveragePercent": 100,
+    "donePercent": 55,
+    "blockedPercent": 5
+  },
+  "systems": [
+    {"name": "Card System", "tasks": ["3.1","3.6","3.7"], "coveragePhaseDistribution": [{"phase": "Phase3", "count": 3}]},
+    {"name": "Combat System", "tasks": ["3.2","3.7","3.10"], "coveragePhaseDistribution": [{"phase": "Phase3", "count": 3}]},
+    {"name": "Equipment System", "tasks": ["3.3"], "coveragePhaseDistribution": [{"phase": "Phase3", "count": 1}]},
+    {"name": "Blessing System", "tasks": ["3.4"], "coveragePhaseDistribution": [{"phase": "Phase3", "count": 1}]},
+    {"name": "Skill Tree System", "tasks": ["3.5"], "coveragePhaseDistribution": [{"phase": "Phase3", "count": 1}]},
+    {"name": "Performance / Pooling", "tasks": ["3.6"], "coveragePhaseDistribution": [{"phase": "Phase3", "count": 1}]},
+    {"name": "Status Effects", "tasks": ["3.7"], "coveragePhaseDistribution": [{"phase": "Phase3", "count": 1}]},
+    {"name": "Run State / Save", "tasks": ["4.1","4.3"], "coveragePhaseDistribution": [{"phase": "Phase4", "count": 2}]},
+    {"name": "Achievements / Meta", "tasks": ["4.2","4.4"], "coveragePhaseDistribution": [{"phase": "Phase4", "count": 2}]},
+    {"name": "Testing Framework", "tasks": ["5.1"], "coveragePhaseDistribution": [{"phase": "Phase5", "count": 1}]},
+    {"name": "Schema Compliance", "tasks": ["5.2"], "coveragePhaseDistribution": [{"phase": "Phase5", "count": 1}]},
+    {"name": "Editor QA", "tasks": ["5.3"], "coveragePhaseDistribution": [{"phase": "Phase5", "count": 1}]},
+    {"name": "Telemetry / Logging", "tasks": ["5.4","5.7"], "coveragePhaseDistribution": [{"phase": "Phase5", "count": 2}]},
+    {"name": "Deterministic RNG", "tasks": ["5.5"], "coveragePhaseDistribution": [{"phase": "Phase5", "count": 1}]},
+    {"name": "Data Integrity", "tasks": ["5.6"], "coveragePhaseDistribution": [{"phase": "Phase5", "count": 1}]},
+    {"name": "Packaging / CI", "tasks": ["6.1","6.2"], "coveragePhaseDistribution": [{"phase": "Phase6", "count": 2}]},
+    {"name": "Documentation Generation", "tasks": ["6.3"], "coveragePhaseDistribution": [{"phase": "Phase6", "count": 1}]},
+    {"name": "Encounter System", "tasks": ["3.8"], "coveragePhaseDistribution": [{"phase": "Phase3", "count": 1}]},
+    {"name": "Reward System", "tasks": ["3.9"], "coveragePhaseDistribution": [{"phase": "Phase3", "count": 1}]},
+    {"name": "Character & Enemy Consolidation", "tasks": ["3.10"], "coveragePhaseDistribution": [{"phase": "Phase3", "count": 1}]},
+    {"name": "Shop System", "tasks": ["4.5"], "coveragePhaseDistribution": [{"phase": "Phase4", "count": 1}]},
+    {"name": "Currency System", "tasks": ["4.6"], "coveragePhaseDistribution": [{"phase": "Phase4", "count": 1}]},
+    {"name": "Event System", "tasks": ["4.7"], "coveragePhaseDistribution": [{"phase": "Phase4", "count": 1}]},
+    {"name": "Map & Node Graph", "tasks": ["4.8"], "coveragePhaseDistribution": [{"phase": "Phase4", "count": 1}]},
+    {"name": "Run Summary", "tasks": ["5.7"], "coveragePhaseDistribution": [{"phase": "Phase5", "count": 1}]},
+    {"name": "Synergy Detection", "tasks": ["5.8"], "coveragePhaseDistribution": [{"phase": "Phase5", "count": 1}]}
+  ],
+  "gaps": [
+    {"id": "GAP-A1", "system": "Encounter System", "description": "Encounter sequencing logic not implemented", "severity": "Critical", "priorityScore": 8},
+    {"id": "GAP-A2", "system": "Reward System", "description": "Reward distribution rules absent", "severity": "High", "priorityScore": 7},
+    {"id": "GAP-A3", "system": "Currency System", "description": "Currency model unspecified", "severity": "High", "priorityScore": 7},
+    {"id": "GAP-A4", "system": "Map & Node Graph", "description": "Map traversal + schema missing", "severity": "High", "priorityScore": 7},
+    {"id": "GAP-A5", "system": "Event System", "description": "Branching event schema undefined", "severity": "High", "priorityScore": 6},
+    {"id": "GAP-A6", "system": "Synergy Detection", "description": "Synergy heuristics undefined", "severity": "Medium", "priorityScore": 5},
+    {"id": "GAP-A7", "system": "Run Summary", "description": "Aggregation spec unspecified", "severity": "Medium", "priorityScore": 5},
+    {"id": "GAP-A8", "system": "Character & Enemy Consolidation", "description": "Unified stat model missing", "severity": "Medium", "priorityScore": 5},
+    {"id": "GAP-A9", "system": null, "description": "Missing plan folders for new tasks", "severity": "Medium", "priorityScore": 4},
+    {"id": "GAP-A10", "system": null, "description": "Schemas missing for new systems", "severity": "High", "priorityScore": 7}
+  ],
+  "recommendations": [
+    {"category": "Data Validation & Integrity", "title": "Add Encounter/Map/Currency Schemas", "rationale": "Enables consistent authoring & validation", "suggestedTaskStub": "Define encounter.schema.json, map.schema.json, currency.schema.json", "priorityScore": 7},
+    {"category": "Testing", "title": "Encounter Simulation Test Harness", "rationale": "Prevents progression balance regressions", "suggestedTaskStub": "Implement automated encounter resolution tests", "priorityScore": 6},
+    {"category": "Monitoring / Telemetry", "title": "Map & Reward Telemetry Events", "rationale": "Improves run analytics", "suggestedTaskStub": "Add events mapNodeVisited, rewardClaimed", "priorityScore": 5},
+    {"category": "Performance & Profiling", "title": "Async Synergy Evaluation", "rationale": "Avoid frame spikes during large deck analysis", "suggestedTaskStub": "Run synergy scoring off main thread", "priorityScore": 5},
+    {"category": "Tooling & Automation", "title": "Reward Table Preview Tool", "rationale": "Aids balancing and iteration", "suggestedTaskStub": "Editor window with probability visualization", "priorityScore": 5},
+    {"category": "UX Polish", "title": "Run Summary UI Panel", "rationale": "Improves end-of-run retention", "suggestedTaskStub": "UI view summarizing key KPIs", "priorityScore": 4},
+    {"category": "Documentation", "title": "Economy Glossary Generation", "rationale": "Clarifies currency sources/sinks", "suggestedTaskStub": "Script generating economy.md", "priorityScore": 3},
+    {"category": "Risk Mitigation", "title": "Schema Fallback Loader", "rationale": "Prevents runtime hard failures when schema missing", "suggestedTaskStub": "Graceful degrade with warnings", "priorityScore": 4}
+  ],
+  "newTasks": [
+    {"id": "3.8", "phase": "Phase3", "title": "Encounter System", "slug": "encounter-system", "status": "pending"},
+    {"id": "3.9", "phase": "Phase3", "title": "Reward System", "slug": "reward-system", "status": "pending"},
+    {"id": "3.10", "phase": "Phase3", "title": "Character & Enemy System Consolidation", "slug": "character-enemy-system", "status": "pending"},
+    {"id": "4.5", "phase": "Phase4", "title": "Shop System", "slug": "shop-system", "status": "pending"},
+    {"id": "4.6", "phase": "Phase4", "title": "Currency System", "slug": "currency-system", "status": "pending"},
+    {"id": "4.7", "phase": "Phase4", "title": "Event System (Narrative / Random)", "slug": "event-system", "status": "pending"},
+    {"id": "4.8", "phase": "Phase4", "title": "Map & Node Graph System", "slug": "map-node-graph-system", "status": "pending"},
+    {"id": "5.7", "phase": "Phase5", "title": "Run Summary & Telemetry Integration", "slug": "run-summary-telemetry", "status": "pending"},
+    {"id": "5.8", "phase": "Phase5", "title": "Synergy Detection Engine", "slug": "synergy-detection-engine", "status": "pending"}
+  ],
+  "schemaDiscrepancies": {
+    "missingSchemas": ["encounter","reward","shop","currency","event","map-node-graph","synergy","run-summary"],
+    "unusedProperties": [
+      {"schema": "cards.schema.json", "property": "tags"},
+      {"schema": "equipment.schema.json", "property": "onEquipEffects"}
+    ],
+    "orphanEntities": []
+  },
+  "unrecognizedStatuses": [],
+  "nextTasks": [
+    {"title": "Define encounter.schema.json", "objective": "Represent encounter composition & modifiers", "acceptance": "Schema validates sample JSON for 3 encounter types"},
+    {"title": "Define map-node.schema.json", "objective": "Represent navigable node graph", "acceptance": "Graph loads & validates edges"},
+    {"title": "Implement EncounterManager", "objective": "Load + resolve encounters", "acceptance": "Manager returns resolved reward seed for sample encounter"},
+    {"title": "Editor Reward Table Preview", "objective": "Balance reward probabilities", "acceptance": "UI displays computed weighting & rarity distribution"},
+    {"title": "CurrencyService core", "objective": "Manage earn/spend lifecycle", "acceptance": "All currency events produce telemetry entries"}
+  ],
+  "weights": {
+    "severity": {"Critical": 5, "High": 4, "Medium": 3, "Low": 2, "Info": 1},
+    "formula": "priorityScore = severityWeight + coverageImpact + dependencyUnblock + riskMitigationBonus"
+  }
+}

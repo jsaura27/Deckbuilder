@@ -1,0 +1,29 @@
+{
+  "timestamp": "2025-10-31T00:00:00Z",
+  "task": "1.2",
+  "planFolder": "Assets/docs/plans/load-validate-schemas",
+  "planFilesValidated": true,
+  "planMatch": true,
+  "filesCreated": [
+    "Assets/docs/plans/load-validate-schemas/validation-report.md",
+    "Assets/docs/plans/load-validate-schemas/changes-log.json",
+    "Assets/docs/plans/load-validate-schemas/summary.md",
+    "Assets/docs/plans/load-validate-schemas/test-report.json",
+    "Assets/docs/plans/load-validate-schemas/test-plan.md"
+  ],
+  "filesEdited": [],
+  "decisions": [
+    { "context": "Schema drafts mix", "decision": "Record draft versions and recommend per-draft validators", "rationale": "Files use Draft-07 and 2020-12; automatic validator choice requires awareness." }
+  ],
+  "buildStatus": "success",
+  "buildOutput": null,
+  "tests": { "executed": false, "summary": null, "failures": [] },
+  "error": null
+
+  ,"testGenerationAttempt": {
+    "timestamp": "2025-11-01T12:05:00Z",
+    "outcome": "aborted",
+    "reason": "No implementation files were created/edited in this plan to generate tests for.",
+    "generatedFiles": []
+  }
+}

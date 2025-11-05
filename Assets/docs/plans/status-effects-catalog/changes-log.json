@@ -1,0 +1,54 @@
+{
+  "task": "3.7 - Status Effects Catalog",
+  "timestamp": "2025-11-02T12:10:00Z",
+  "planFilesValidated": true,
+  "planMatch": true,
+  "filesCreated": [
+    "Assets/Scripts/DataModels/StatusEffectDefinition.cs",
+    "Assets/Tests/Editor/DataModels/StatusEffectDefinitionTests.cs",
+    "Assets/Tests/Editor/DataModels/ScriptableObjectSmokeTests.cs",
+    "Assets/Tests/StatusEffectsTests.cs",
+    "Assets/docs/plans/status-effects-catalog/summary.md"
+  ],
+  "filesEdited": [
+    {
+      "path": "Assets/docs/roadmap.json",
+      "reason": "Set task 3.7 status to in-progress before implementing"
+    }
+  ],
+  "decisions": [
+    {
+      "context": "Test placement",
+      "decision": "Place ScriptableObject/asset creation tests into Assets/Tests/Editor/ per project guidance",
+      "rationale": "Editor tests are appropriate for ScriptableObject instantiation and keep runtime integration tests separate"
+    },
+    {
+      "context": "Build attempt",
+      "decision": "Tried to run 'dotnet build' as a lightweight compile proxy",
+      "rationale": "Use dotnet/MSBuild to detect compile errors quickly outside Unity. Command not available in this environment; performed file-level syntax checks instead."
+    },
+    {
+      "context": "UNFULFILLED_STEP",
+      "decision": "Integrate with combat pipeline (Step 4)",
+      "rationale": "Requires runtime integration with existing combat manager and scene context; deferred for dedicated implementation and integration tests."
+    },
+    {
+      "context": "UNFULFILLED_STEP",
+      "decision": "Full unit/integration test execution (Step 5)",
+      "rationale": "Cannot run Unity Test Runner in this environment; created Editor-side tests but execution is deferred to CI or local Unity run."
+    },
+    {
+      "context": "Test organization",
+      "decision": "Moved newly generated editor tests into Assets/Tests/Editor/DataModels/ to keep test tree organized",
+      "rationale": "Avoid top-level test files; tests should be grouped by area."
+    }
+  ],
+  "buildStatus": "error",
+  "buildOutput": "Failed to run 'dotnet build' - command not found in this environment. File-level syntax checks on created files reported no immediate errors.",
+  "tests": {
+    "executed": false,
+    "summary": "Tests generated (Editor tests) but not executed here. Compilation/execution could not be performed because 'dotnet' was not available and Unity Test Runner is not accessible.",
+    "failures": []
+  },
+  "error": "Build/test execution not performed: 'dotnet' not available; Unity Test Runner not accessible in this environment. Partial implementation completed; integration and test execution deferred."
+}

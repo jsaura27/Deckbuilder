@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.com/schemas/test-report.schema.json",
+  "title": "Test Report",
+  "type": "object",
+  "required": ["task", "coverage", "files", "generatedTests", "integrationTests", "iterations", "status"],
+  "properties": {
+    "task": {"type": "string"},
+    "coverage": {"type": "number", "minimum": 0, "maximum": 1},
+    "files": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["path", "coverage"],
+        "properties": {
+          "path": {"type": "string"},
+          "coverage": {"type": "number", "minimum": 0, "maximum": 1},
+          "uncoveredLines": {"type": "array", "items": {"type": "integer", "minimum": 1}},
+          "totalLines": {"type": "integer", "minimum": 1}
+        },
+        "additionalProperties": false
+      }
+    },
+    "generatedTests": {"type": "array", "items": {"type": "string"}},
+    "integrationTests": {"type": "array", "items": {"type": "string"}},
+    "iterations": {"type": "integer", "minimum": 0},
+    "status": {"type": "string", "enum": ["target-met", "partial", "error"]},
+    "failures": {"type": "array", "items": {"type": "string"}},
+    "reason": {"type": ["string", "null"]},
+    "methodCoverageHeuristic": {
+      "type": "object",
+      "properties": {
+        "totalMethods": {"type": "integer", "minimum": 0},
+        "testedMethods": {"type": "integer", "minimum": 0},
+        "estimatedCoverage": {"type": "number", "minimum": 0, "maximum": 1}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

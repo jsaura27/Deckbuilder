@@ -1,0 +1,32 @@
+{
+  "task": "Meta Progression (Optional)",
+  "objective": "Define and implement a meta-progression system to persist player unlocks, achievements, and optional progression data across runs.",
+  "prerequisites": [
+    "Assets/docs/requirements.md",
+    "Assets/docs/requirements.json",
+    "Review Assets/docs/schemas/ for existing persistence schemas"
+  ],
+  "steps": [
+    { "step": 1, "title": "Design save schema", "description": "Create Assets/docs/schemas/meta-progression.schema.json describing persisted fields and versioning." },
+    { "step": 2, "title": "Implement data model", "description": "Add C# POCOs under Assets/Scripts/DataModels/Meta/ matching schema and mark as [Serializable]." },
+    { "step": 3, "title": "Persistence API", "description": "Implement MetaProgressionService with Load/Save/Reset/MigrateIfNeeded using Application.persistentDataPath." },
+    { "step": 4, "title": "Versioning & Migration", "description": "Add version field and migration registry; include unit tests for migrations." },
+    { "step": 5, "title": "Integration points", "description": "Hook Save() to achievements, shops and provide editor import/export tools." },
+    { "step": 6, "title": "UI & UX", "description": "Provide minimal UI to view/reset progression and confirm destructive actions." },
+    { "step": 7, "title": "Tests & Validation", "description": "Unit tests for serialization, migrations, and add build-time schema compliance checks." }
+  ],
+  "deliverables": [
+    "Assets/docs/plans/meta-progression-optional/plan.md",
+    "Assets/docs/plans/meta-progression-optional/plan.json",
+    "Assets/docs/schemas/meta-progression.schema.json",
+    "Assets/Scripts/DataModels/Meta/MetaProgressionData.cs",
+    "Assets/Scripts/Services/Save/MetaProgressionService.cs",
+    "Assets/Editor/SaveTools/MetaProgressionTool.cs",
+    "Assets/Tests/MetaProgressionTests.cs"
+  ],
+  "notes": [
+    "Prefer JSON file storage for portability and testability.",
+    "Keep schema and C# models in sync; consider a CI parity check.",
+    "Split optional in-run snapshot save into a follow-up task to limit scope."
+  ]
+}

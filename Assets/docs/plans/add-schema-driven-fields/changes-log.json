@@ -1,0 +1,27 @@
+{
+  "timestamp": "2025-11-01T00:01:00Z",
+  "taskId": "2.2",
+  "planFolder": "Assets/docs/plans/add-schema-driven-fields",
+  "filesCreated": [
+    "Assets/Scripts/DataModels/Enums.cs",
+    "Assets/Scripts/DataModels/EffectDefinition.cs",
+    "Assets/Scripts/DataModels/CardDefinition.cs",
+    "Assets/Scripts/DataModels/EquipmentDefinition.cs",
+    "Assets/Scripts/DataModels/BlessingDefinition.cs",
+    "Assets/Scripts/DataModels/SkillTreeDefinition.cs",
+    "Assets/Tests/Editor/ScriptableObjectSmokeTests.cs",
+    "Assets/Tests/Editor/DataModels/CardDefinitionTests_Extended.cs",
+    "Assets/Tests/Editor/DataModels/EffectDefinitionTests_Extended.cs",
+    "Assets/Tests/Integration/DataModels/ScriptableObjectCreationIntegrationTests.cs"
+  ],
+  "filesEdited": [],
+  "decisions": [
+    "Effects are represented initially as EffectDefinition ScriptableObjects with a JSON payload string to avoid premature polymorphic typing.",
+    "Enums (Rarity, CardType, SlotType) created to match schema enums.",
+    "Skill node effects use a descriptive string placeholder; can be migrated to EffectDefinition later.",
+    "Placed files under Assets/Scripts/DataModels following plan recommendation; tests under Assets/Tests/Editor.",
+    "All helper additions are minimal and limited to EffectDefinition and a few small serializable classes."
+  ],
+  "buildStatus": "pending-check",
+  "error": null
+}
